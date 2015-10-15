@@ -1,2 +1,5 @@
-# chrome-extension-with-angular
-Presentation material / Building chrome extension with AngularJS
+# Building Chrome extension with AngularJS
+
+* Presentation
+* Presentation materials
+* Demo chrome extension "Magic box"
