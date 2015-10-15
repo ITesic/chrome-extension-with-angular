@@ -1,53 +1,54 @@
 {
-  "name": "__MSG_appName__",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "__MSG_appDescription__",
-  "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
-  },
-  "default_locale": "en",
-  "background": {
-    "scripts": [
-      "scripts/chromereload.js",
-      "scripts/background.js"
-    ]
-  },
-  "browser_action": {
-    "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
+    "name": "Sarma magic box",
+    "version": "0.0.2",
+    "manifest_version": 2,
+    "description": "Demo Chrome extension for Sarajevo Ruby Meetup",
+    "icons": {
+        "16": "images/ruby-16.png",
+        "128": "images/ruby-128.png"
     },
-    "default_title": "Sarma",
-    "default_popup": "popup.html"
-  },
-  "options_page": "options.html",
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
-  "omnibox": {
-    "keyword": "Sarma"
-  },
-  "content_scripts": [
-    {
-      "matches": [
+    "default_locale": "en",
+    "background": {
+        "scripts": [
+            "scripts/background.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/ruby-19.png",
+            "38": "images/ruby-38.png"
+        },
+        "default_title": "Sarma magic box",
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    "omnibox": {
+        "keyword": "Sarma"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "bower_components/jquery/dist/jquery.min.js",
+                "scripts/contentscript.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "history",
+        "notifications",
+        "management",
         "http://*/*",
         "https://*/*"
-      ],
-      "js": [
-        "scripts/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false
-    }
-  ],
-  "permissions": [
-    "tabs",
-    "history",
-    "management",
-    "http://*/*",
-    "https://*/*"
-  ]
+    ]
 }
